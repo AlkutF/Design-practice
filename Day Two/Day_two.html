@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Day_two.css">
+    <title>Progress Steps</title>
+</head>
+<body>
+    <div class="Exercis">
+        <div class="container">
+            <div class="progress active op4"></div>
+            <div class="Step 1">
+                <p>1</p>
+            </div>
+            <div class="Step 2">
+                <p>2</p>
+            </div> 
+            <div class="Step 3">
+                <p>3</p>
+            </div>
+            <div class="Step 4">
+                <p>4</p>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="btn" id="back" disabled>Back</button>
+            <button class="btn" id="next">Next</button>
+        </div>
+    </div>
+    <script>
+        let step = 0;
+        const progress = document.querySelector('.progress');
+        const steps = document.querySelectorAll('.Step');
+        const back = document.getElementById('back');
+        const next = document.getElementById('next');
+
+        next.addEventListener('click', () => {
+            if (step < steps.length - 1) {
+                step++;
+            }
+            update();
+        });
+
+        back.addEventListener('click', () => {
+            if (step > 0) {
+                step--;
+            }
+            update();
+        });
+
+        function update() {
+            steps.forEach((el, index) => {
+                if (index <= step) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            });
+
+            back.disabled = step === 0;
+            next.disabled = step === steps.length - 1;
+            progress.style.width = ((step) / (steps.length - 1)) * 27 + '%';
+        }
+
+        update();
+    </script>
+</body>
+</html>
