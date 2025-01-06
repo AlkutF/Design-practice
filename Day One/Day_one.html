@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Day_one.css">
+    <title>Expanding Cards</title>
+</head>
+<body>
+    <div class="container">
+        <div class="Card one active">
+            <p>Anime Night</p>
+        </div>
+        <div class="Card 2 two">
+            <p>Anime City</p>
+        </div>
+        <div class="Card 3 three ">
+            <p>Anime Sunrise</p>
+        </div>
+        <div class="Card 4 four">
+            <p>Anime Moon</p>
+        </div>
+        <div class="Card 5 five">
+            <p>Anime Couple</p>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function removeActiveClasses() {
+        cards.forEach(card => {
+            card.classList.remove('active')
+        })
+    }
+
+    const cards = document.querySelectorAll('.Card')
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            removeActiveClasses()
+            card.classList.add('active')
+            console.log(card)
+        })
+    })
+</script>

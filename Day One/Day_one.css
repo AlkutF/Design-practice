@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+.container{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.Card{
+    width: 100px;
+    height: 80vh;
+    background-color: #f1f1f1;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 10px;
+    transition: width 1s;
+}
+.Card p {
+    transition: color 0.9s;
+    margin-top: 440px;
+    margin-left: 10px;
+    font-size: 1.4rem;
+}
+.Card p{
+    color: transparent;
+}
+.Card.active p{
+    color: white;
+}
+
+.active{
+    width: calc(100% - 20px);
+}
+.one{
+   background-image: url('/Assets/Imagen1.webp');
+    background-size: cover;
+    background-position: center;
+}
+.two{
+    background-image: url('/Assets/Imagen2.webp');
+    background-size: cover;
+    background-position: center;
+}
+.three{
+    background-image: url('/Assets/Imagen3.webp');
+    background-size: cover;
+    background-position: center;
+}
+.four{
+    background-image: url('/Assets/Imagen4.webp');
+    background-size: cover;
+    background-position: center;
+}
+.five{
+    background-image: url('/Assets/Imagen5.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (max-width: 768px){
+    .container{
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .Card{
+        width: 80vw;
+        height: 100px;
+        transition: height 1s;
+    }
+    .Card p{
+        margin-top: 10px;
+    }
+    .Card.active{
+
+        height: calc(100% - 20px);
+    } 
+    
+}
